@@ -1,0 +1,38 @@
+<!--<table class="table table-bordered" align="center">
+  <tr>
+    <th>Entry</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Project</th>
+    <th>Images</th>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+</table> -->
+<div class="list-group" *ngIf="selectedEntry == null">
+  <button
+    class="list-group-item"
+    active
+    *ngFor="let entry of entries"
+    (click)="onSelectEntry(entry)"
+  >
+    <table class="table table-bordered" align="center">
+      <tr>
+        <th scope="row"> Time Entry {{ entry.id }}</th>
+        <td><b>Title</b> <br>{{ entry.title }}</td>
+        <td><b>Description</b><br>{{ entry.description }}</td>
+        <td><b>Project</b><br>{{ entry.project }}</td>
+        <td><b>Image</b><br>{{ entry.image }} <br>
+        {{ entry.secondImage }}</td>
+        <td><b>Date</b><br>{{ entry.date | date }}</td>
+        <td><b>Start Time</b><br>{{ entry.start }}</td>
+        <td><b>End Time</b><br>{{ entry.end }}</td>
+    </table>
+  </button>
+</div>
+
+<app-display-entry
+  *ngIf="selectedEntry"
+  [entry]="selectedEntry"
+></app-display-entry>

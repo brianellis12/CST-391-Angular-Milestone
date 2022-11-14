@@ -1,0 +1,36 @@
+<div class="card" align="left" style="margin-left:50px;margin-right:50px;" *ngIf="!wasSubmitted">
+  <div class="card-body">
+    <h5 class="card-title">Edit Time Entry</h5>
+  <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+    <div class="row">
+      <div class="col-lg">
+          <input id="title" type="text" class="form-control" aria-describedby="helpTitle" required [(ngModel)]="entry.title" name="title" >
+          <p></p>
+          <input id="date" type="date" class="form-control" aria-describedby="helpDate"  required [(ngModel)]="entry.date" name="date">
+      </div>
+      <div class="col-lg">
+          <textarea id="description" rows="5" class="form-control" aria-describedby="helpDescription" required [(ngModel)]="entry.description" name="description">{{ entry.description }}</textarea>
+      </div>
+      <div class="col-lg">
+        <input id="start" type="text" class="form-control" aria-describedby="helpStart" placeholder="Start" required [(ngModel)]="entry.start" name="start">
+        <p></p>
+        <input id="end" type="text" class="form-control" aria-describedby="helpEnd" placeholder="End" required [(ngModel)]="entry.end" name="end">
+        <p></p>
+        <input id="project" type="text" class="form-control" aria-describedby="helpProject" placeholder="Project" required [(ngModel)]="entry.project" name="project">
+      </div>
+
+      <div class="col-lg">
+        <input type="file" class="form-control-file" id="image" aria-describedby="helpImage" [(ngModel)]="entry.image" name="image">
+        <p></p>
+        <input type="file" class="form-control-file" id="image2" aria-describedby="helpImage2" [(ngModel)]="entry.secondImage" name="secondImage">
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+</div>
+<div  *ngIf="wasSubmitted">
+</div>
+

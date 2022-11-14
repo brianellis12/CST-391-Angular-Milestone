@@ -1,0 +1,15 @@
+<div>
+  <nav class="navbar navbar-expand-lg bg-dark p-0">
+    <div class="container">
+      <a class="navbar-brand" href="#">Time Tracking Application</a>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+<div style="display: flex; flex-grow: grow; flex-direction: column;">
+  <div align="right">
+    <app-create-entry></app-create-entry>
+  </div>
+  <app-list-entries></app-list-entries>
+</div>
+
